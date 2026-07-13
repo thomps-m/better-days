@@ -1,0 +1,19 @@
+/* ============== ROOT VARIABLES ============== */
+:root {
+    --color-primary-light: hsl(150, 13%, 94%); /* #EEF2F0 */
+    --color-primary-dark: hsl(196, 37%, 16%); /* #1A3038 */
+    --color-secondary: hsl(146, 24%, 38%); /* #4A7A5F */
+    --color-accent: hsl(257, 36%, 67%); /* #9F8ECA */
+    --color-warning: hsl(17, 47%, 56%); /* #C4785A */
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ============== GENERAL STYLES ============== */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    box-sizing: border-box;
+}
