@@ -9,8 +9,8 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "DM Sans", system-ui, sans-serif;
 
-    --font-display: 'Fraunces', Georgia, serif;
-    --font-body: 'DM Sans', system-ui, sans-serif;
+  --ring-base-size: 15rem;
+  --ring-base-delay: 0.9s;
 }
 
 /* GENERAL STYLES */
@@ -84,4 +84,97 @@ nav {
   font-weight: 600;
   font-size: 280%;
   font-family: var(--font-display);
+}
+/* HERO */
+#hero {
+  position: relative;
+  min-height: 85dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem 2rem 4rem;
+
+}
+/* Hero background rings */
+.hero-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 0;
+  & > div {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid
+      color-mix(in srgb, var(--color-accent) 32%, var(--color-primary-dark));
+    transform: translate(-50%, -50%);
+    animation: ring-breathe 9s ease-in-out infinite;
+
+    &:first-child {
+      width: var(--ring-base-size);
+      height: var(--ring-base-size);
+    }
+    &:nth-child(2) {
+      width: calc(var(--ring-base-size) * 1.6);
+      height: calc(var(--ring-base-size) * 1.6);
+      animation-delay: var(--ring-base-delay);
+      border-color: color-mix(
+        in srgb,
+        var(--color-accent) 25%,
+        var(--color-primary-dark)
+      );
+    }
+    &:nth-child(3) {
+      width: calc(var(--ring-base-size) * 2.2);
+      height: calc(var(--ring-base-size) * 2.2);
+      animation-delay: calc(var(--ring-base-delay) * 2);
+      border-color: color-mix(
+        in srgb,
+        var(--color-accent) 20%,
+        var(--color-primary-dark)
+      );
+    }
+    &:nth-child(4) {
+      width: calc(var(--ring-base-size) * 2.8);
+      height: calc(var(--ring-base-size) * 2.8);
+      animation-delay: calc(var(--ring-base-delay) * 3);
+      border-color: color-mix(
+        in srgb,
+        var(--color-accent) 16%,
+        var(--color-primary-dark)
+      );
+    }
+    &:last-child {
+      width: calc(var(--ring-base-size) * 3.6);
+      height: calc(var(--ring-base-size) * 3.6);
+      animation-delay: calc(var(--ring-base-delay) * 4);
+      border-color: color-mix(
+        in srgb,
+        var(--color-accent) 13%,
+        var(--color-primary-dark)
+      );
+    }
+  }
+}
+/* Hero rings animation */
+@keyframes ring-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+/* MEDIA QUERIES */
+@media (prefers-reduced-motion: reduce) {
+  .hero-rings {
+    & > div {
+      animation: none;
+      opacity: 0.35;
+    }
+  }
 }
