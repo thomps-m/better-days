@@ -74,3 +74,14 @@ nav {
     );
   }
 }
+#burger {
+  background-image: none;
+  color: color-mix(
+    in srgb,
+    var(--color-secondary) 10%,
+    var(--color-primary-light)
+  );
+  font-weight: 600;
+  font-size: 280%;
+  font-family: var(--font-display);
+}
