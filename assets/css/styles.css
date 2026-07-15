@@ -39,3 +39,38 @@ nav {
   left: 0;
   right: 0;
 }
+#navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--color-primary-light);
+  &:hover {
+    color: color-mix(
+      in srgb,
+      var(--color-secondary) 30%,
+      var(--color-primary-light)
+    );
+  }
+}
+#navbarSupportedContent a {
+  color: color-mix(
+    in srgb,
+    var(--color-secondary) 30%,
+    var(--color-primary-light)
+  );
+  &.active {
+    color: color-mix(
+      in srgb,
+      var(--color-secondary) 10%,
+      var(--color-primary-light)
+    );
+    font-weight: 600;
+  }
+  &:hover {
+    color: color-mix(
+      in srgb,
+      var(--color-secondary) 5%,
+      var(--color-primary-light)
+    );
+  }
+}
