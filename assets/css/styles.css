@@ -169,6 +169,40 @@ nav {
     transform: translate(-50%, -50%) scale(1.04);
   }
 }
+
+/* Hero text styles */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 60%;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--color-primary-light);
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+
+  & em {
+    font-style: italic;
+    color: color-mix(
+        in srgb,
+        var(--color-secondary) 45%,
+        white
+      );
+  }
+}
+.hero-sub {
+  font-size: 1.025rem;
+  color: var(--color-primary-light);
+  max-width: 470px;
+  margin: 0 auto 3.5rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
 /* MEDIA QUERIES */
 @media (prefers-reduced-motion: reduce) {
   .hero-rings {
