@@ -1,4 +1,4 @@
-/* ============== ROOT VARIABLES ============== */
+/* ROOT VARIABLES */
 :root {
   --color-primary-light: hsl(150, 13%, 94%); /* #EEF2F0 */
   --color-primary-dark: hsl(158, 30%, 15%); /* #1A3028 */
@@ -24,6 +24,7 @@ body {
   color: var(--color-primary-light);
   box-sizing: border-box;
 }
+
 /* NAVBAR */
 nav {
   background-color: color-mix(
@@ -85,6 +86,7 @@ nav {
   font-size: 280%;
   font-family: var(--font-display);
 }
+
 /* HERO */
 #hero {
   position: relative;
@@ -181,7 +183,6 @@ nav {
     transform: translate(-50%, -50%) scale(1.04);
   }
 }
-
 /* Hero text styles */
 .hero-content {
   position: relative;
@@ -228,6 +229,22 @@ nav {
     display: block;
   width: 100%;
   height: 4.5rem;
+  }
+}
+
+/* CONTENT SECTIONS */
+main {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* FOOTER */
+footer {
+  color: color-mix(in srgb, var(--color-secondary) 35%, var(--color-primary-light));
+  text-align: center;
+  & hr {
+    width: 100%;
+    border: 2px solid color-mix(in srgb, var(--color-primary-dark) 30%, var(--color-secondary));
   }
 }
 
