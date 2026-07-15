@@ -25,7 +25,11 @@ body {
 }
 h2 {
   font-size: 2rem;
-  color: color-mix(in srgb, var(--color-secondary) 90%, var(--color-primary-dark));
+  color: color-mix(
+    in srgb,
+    var(--color-secondary) 90%,
+    var(--color-primary-dark)
+  );
   font-family: var(--font-display);
   margin-bottom: 1rem;
   text-align: center;
@@ -209,11 +213,7 @@ nav {
 
   & em {
     font-style: italic;
-    color: color-mix(
-        in srgb,
-        var(--color-secondary) 45%,
-        white
-      );
+    color: color-mix(in srgb, var(--color-secondary) 45%, white);
   }
 }
 .hero-sub {
@@ -235,8 +235,8 @@ nav {
 
   & svg {
     display: block;
-  width: 100%;
-  height: 4.5rem;
+    width: 100%;
+    height: 4.5rem;
   }
 }
 
@@ -254,9 +254,17 @@ main {
   /* Card styles */
   background-color: color-mix(in srgb, var(--color-primary-light) 20%, white);
   padding: 1rem;
-  color: color-mix(in srgb, var(--color-primary-dark) 80%, var(--color-primary-light));
+  color: color-mix(
+    in srgb,
+    var(--color-primary-dark) 80%,
+    var(--color-primary-light)
+  );
   border: none;
-  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.4s ease-in-out,
+    border-color 0.4s ease-in-out;
+  transition-delay: 0.3s;
   height: auto;
   overflow: hidden;
   /* Card content: visible above the fold */
@@ -264,19 +272,33 @@ main {
     font-family: var(--font-display);
     font-weight: 500;
     background-color: inherit;
-  }  
+  }
   & .card-icon {
     color: var(--color-secondary);
+    font-size: 105%;
+  }
+  /* Normalise icon presentation */
+  & .card-icon-boost {
+    font-size: 125%;
+    font-weight: bold;
   }
   & .hover-hint {
-    color: color-mix(in srgb, var(--color-secondary) 80%, var(--color-primary-light));
+    color: color-mix(
+      in srgb,
+      var(--color-secondary) 90%,
+      var(--color-primary-dark)
+    );
     margin-top: 1rem;
   }
   /* Heading for card-expand */
   & h4 {
     text-transform: uppercase;
     font-size: 85%;
-    color: color-mix(in srgb, var(--color-accent) 80%, var(--color-primary-dark));
+    color: color-mix(
+      in srgb,
+      var(--color-accent) 80%,
+      var(--color-primary-dark)
+    );
     letter-spacing: 5%;
   }
 
@@ -295,33 +317,45 @@ main {
 }
 /* Card top border that reveals on hover */
 #recognise article {
-      &::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    &:hover, &:focus-within {
-      box-shadow: 0 8px 30px rgba(30,46,38,0.13);
-      transform: translateY(-4px);
-      border-color: var(--color-accent);
-      &::before {
-        transform: scaleX(1);
-      }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--color-accent),
+      var(--color-secondary)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 8px 30px rgba(30, 46, 38, 0.13);
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+    &::before {
+      transform: scaleX(1);
     }
   }
+}
 
 /* FOOTER */
 footer {
-  color: color-mix(in srgb, var(--color-secondary) 35%, var(--color-primary-light));
+  color: color-mix(
+    in srgb,
+    var(--color-secondary) 35%,
+    var(--color-primary-light)
+  );
   text-align: center;
   & hr {
     width: 100%;
-    border: 2px solid color-mix(in srgb, var(--color-primary-dark) 30%, var(--color-secondary));
+    border: 2px solid
+      color-mix(in srgb, var(--color-primary-dark) 30%, var(--color-secondary));
   }
 }
 
@@ -331,6 +365,12 @@ footer {
     & > div {
       animation: none;
       opacity: 0.35;
+    }
+  }
+  #recognise article {
+    transition: none;
+    &::before {
+      transition: none;
     }
   }
 }
