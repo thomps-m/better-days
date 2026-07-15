@@ -261,10 +261,10 @@ main {
   );
   border: none;
   transition:
-    box-shadow 0.3s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     transform 0.4s ease-in-out,
     border-color 0.4s ease-in-out;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
   height: auto;
   overflow: hidden;
   /* Card content: visible above the fold */
@@ -288,7 +288,8 @@ main {
       var(--color-secondary) 90%,
       var(--color-primary-dark)
     );
-    margin-top: 1rem;
+    display: inline-block;
+    padding-top: 0.5rem;
   }
   /* Heading for card-expand */
   & h4 {
@@ -342,6 +343,13 @@ main {
       transform: scaleX(1);
     }
   }
+}
+#recognise .alert-primary {
+  background-color: color-mix(in srgb, var(--color-accent) 25%, white);
+  box-shadow: none;
+  border: none; 
+  border-left: 4px solid var(--color-accent);
+  margin-top: 2rem;
 }
 
 /* FOOTER */
