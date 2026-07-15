@@ -1,19 +1,41 @@
 /* ============== ROOT VARIABLES ============== */
 :root {
-    --color-primary-light: hsl(150, 13%, 94%); /* #EEF2F0 */
-    --color-primary-dark: hsl(158, 30%, 15%); /* #1A3028 */
-    --color-secondary: hsl(146, 24%, 38%); /* #4A7A5F */
-    --color-accent: hsl(257, 36%, 67%); /* #9F8ECA */
-    --color-warning: hsl(17, 47%, 56%); /* #C4785A */
+  --color-primary-light: hsl(150, 13%, 94%); /* #EEF2F0 */
+  --color-primary-dark: hsl(158, 30%, 15%); /* #1A3028 */
+  --color-secondary: hsl(146, 24%, 38%); /* #4A7A5F */
+  --color-accent: hsl(257, 36%, 67%); /* #9F8ECA */
+  --color-warning: hsl(17, 47%, 56%); /* #C4785A */
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
 
     --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
-/* ============== GENERAL STYLES ============== */
+/* GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--font-body);
-    background-color: var(--color-primary-light);
-    color: var(--color-primary-dark);
-    box-sizing: border-box;
+  font-family: var(--font-body);
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-light);
+  box-sizing: border-box;
+}
+/* NAVBAR */
+nav {
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary-dark) 80%,
+    transparent
+  );
+  color: var(--color-primary-light);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-primary-dark) 40%, var(--color-secondary));
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 }
