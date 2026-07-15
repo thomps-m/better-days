@@ -41,16 +41,17 @@ h2 {
 nav {
   background-color: color-mix(
     in srgb,
-    var(--color-primary-dark) 80%,
+    var(--color-primary-dark) 85%,
     transparent
   );
   color: var(--color-primary-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+    /* border-bottom: 1px solid color-mix(in srgb, white 15%, transparent); */
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-primary-dark) 40%, var(--color-secondary));
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100dvw;
 }
 #navbar-brand {
   font-family: var(--font-display);
@@ -247,8 +248,7 @@ main {
   & section {
     padding-bottom: 2rem;
   }
-}
-
+  }
 /* Recognise section */
 #recognise article {
   /* Card styles */
