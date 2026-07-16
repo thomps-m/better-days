@@ -12,13 +12,21 @@ The live site can be viewed [here](https://thomps-m.github.io/better-days/index.
 #### Business Requirements
 #### User Needs
 
-### Mapping Requirements to Features
-#### Functional & Non-Functional Requirements
-#### Content Requirements
+
 #### User Stories
 As someone experiencing stress and low mood for the first time, I would like to be able to access clear mental health advice without feeling judged. 
+- The page title, hero headline, and supporting description are visible without scrolling
+- The headline clearly communicates that the site is about mental health guidance
+- The tone of the copy is calm and non-clinical — it does not use alarming or stigmatising language
+- A clear call-to-action button is present, directing the user to the main content
+- The visual design does not feel corporate, medical, or overwhelming
 
 As a mobile user, I would like to be able to access the site on my phone, and be able to easily find the information I need.
+- All content is readable on screens 375px wide and above with no horizontal scrolling
+- The navigation links remain accessible and do not overlap or clip on small viewports
+- The condition cards stack into a single column on mobile
+- Touch targets (tabs, labels, accordion summaries) are large enough to tap comfortably — minimum 44×44px
+- Hero text scales fluidly using `clamp()` and does not overflow its container
 
 As someone in acute distress, I would like to be able to find a helpline number as quickly as possible.
 
@@ -28,9 +36,6 @@ As a loved one of someone who struggles with their mental health, I would like t
 
 As someone who prefers reduced-motion, I would like my preferences to be respected when I acess the site and its content. 
 
-### Defining Site Structure
-#### Information Architecture
-#### Interaction Design 
 
 ### Visualising Structure
 #### Wireframes
@@ -47,7 +52,7 @@ The CSS color-mix() function is used throughout the project to combine these 5 s
 
 2 accent shades were used alongside the three core shades: a pop of lavender, and a warm peach. The lavender was chosen as the primary accent colour, to add visual interest against the greens. The colour was used primarily for visual details (more of which will be implemented in future). While these colours are complementary, the pairing is intentionally unexpected - to encourage a measured pace when browsing the site. However, the choice was not based solely on its interactions with the base colours; synonymous with the plant, which is widely used in health & wellness products, lavender has wellness and calming credentials all of its own.
 
-The warm peach, used exclusively in the 'Get Support' section, was also used as an accent colour. Adding warmth in an otherwise cool-toned palette
+The warm peach, used exclusively in the 'Get Support' section, was also used as an accent colour. Adding warmth in an otherwise cool-toned palette creates a sense off urgency, but the peachiness of the shade ensures it does not feel alarming.
 
 An explorable version of the colour scheme is viewable [here](https://coolors.co/palette/C4785A-1A3028-EEF2F0-4A7A5F-9F8ECA).
 
@@ -84,24 +89,57 @@ HTML
 CSS
 Bootstrap 5 
 
-Figma 
-Adobe Express
-Procreate
+### Design Tools
+- Figma (to create wireframes)
+- Adobe Express (to edit design assets)
+- Procreate (to create design assets)
 
 ### AI Use
-Claude Chat
-ChatGPT
+#### Written Contributions
+- Claude Chat was used to generate the base copy for the site, which was then copyedited by the developer. 
+- Claude Chat was used to generate user stories for the site, which were then edited and expanded upon by the developer.
+
+#### Design Contributions
+- Chat GPT was used to generate design ideas for the favicon. One of these was selected as a suitable basis for the favicon design, which was then created by the developer using Adobe Express & Procreate. 
+- Claude Chat was used to contribute colour scheme suggestions suitable to the theme & intended feel. 
+
+#### Code Contributions
+- Claude Chat was used to create the CSS animation for the hero rings. This code was significantly refactored by the developer, to improve the structure & CSS targeting, avoid repetition, and increase readability.
+- Chat GPT was used to generate the svg wave which acts as the transition between the hero and the Recognise section.
+
+#### Debugging Contributions
+- Chat GPT was used to improve the appearance of the navbar background - I wanted to retain the translucency of the navbar, whilst obscuring the text that scrolled behind it. Chat GPT was useful in identifying the blur proprties as an effective solution
+- Upon researching, and finding that support for CSS relative colours was only moderately-widely available, Chat GPT was used to suggest an alternative approach to colour for the project. It was important that the method allowed for the dynamic generation of shades, as well as capacity for opacity - Chat GPT was useful in identifying the baseline widely supported css color-mix() function as an appropriate alternative. 
 
 ## Testing
-### User Stories
 ### Code Validation
-### Accessibility
-### Responsiveness
+#### HTML 
+![HTML validation](documentation/html-validation.png)
+#### CSS 
+![CSS validation](documentation/css-validation.png)
+This validation contains parse errors as the validator does not have full support for native CSS nesting.
+### Responsiveness & Browser Compatibility
+The page shown on Chrome, on mobile screen size:
+![Mobile-size homepage, shown on Chrome](documentation/chrome.png)
+The page shown on Safari, on tablet screen size:
+![Tablet-size homepage, shown on Safari](documentation/safari.png)
+The page shown on Edge, on laptop screen size:
+![Laptop-size homepage, shown on Edge](documentation/edge.png)
+The page shown on Firefox, on laptop screen size:
+![Laptop-size homepage, shown on Firefox](documentation/firefox.png)
+
 ### Lighthouse
+Lighthouse report on desktop:
+![Lighthouse testing scores on desktop](documentation/lighthouse-desktop.png)
+Lighthouse report on mobile:
+![Lighthouse testing scores on mobile](documentation/lighthouse-mobile.png)
 ### Issues
 #### Resolved Issues
 #### Known Bugs
 
 ## Attribution
+- The code for the hero rings animation was created by Claude Chat, and then refactored by the developer
+
+## Deployment
 
 ## Future Features
