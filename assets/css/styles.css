@@ -106,9 +106,6 @@ nav {
 }
 
 /* HERO */
-#skip {
-  z-index: 200;
-}
 #begin {
   background-color: var(--color-accent);
   color: var(--color-primary-light);
