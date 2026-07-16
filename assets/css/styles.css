@@ -38,7 +38,7 @@ h2 {
   font-family: var(--font-display);
   margin-bottom: 1rem;
   text-align: center;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
   font-weight: 400;
 }
 
@@ -106,6 +106,19 @@ nav {
 }
 
 /* HERO */
+#skip {
+  z-index: 200;
+}
+#begin {
+  background-color: var(--color-accent);
+  color: var(--color-primary-light);
+  border-radius: 100px;
+  border: none;
+  &:hover {
+    background-color: color-mix(in oklch, var(--color-accent) 90%, var(--color-primary-dark));
+  }
+}
+
 #hero {
   position: relative;
   min-height: 85dvh;
@@ -308,7 +321,7 @@ main {
       var(--color-accent) 80%,
       var(--color-primary-dark)
     );
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
   }
 
   /* Show card details on hover */
@@ -365,7 +378,7 @@ main {
     color: var(--color-primary-light);
     padding-bottom: 1rem;
     font-weight: 300;
-    letter-spacing: -1%;
+    letter-spacing: -0.01em;
   }
   & p {
     text-align: left;
@@ -390,9 +403,9 @@ main {
   }
   & h3 {
     font-family: var(--font-body);
-    color: var(--color-warning);
+    color: color-mix(in oklch, var(--color-warning) 80%, var(--color-primary-light));
     text-transform: uppercase;
-    letter-spacing: 10%;
+    letter-spacing: 0.1em;
     font-weight: 300;
     font-size: 85%;
     line-height: 0.9;
